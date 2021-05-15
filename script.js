@@ -1,15 +1,23 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var numberOfCharacters = numberOfCharacters.value;
-var numbers = numbers.value;
-var upperAndLowercase = upperAndLowercase.value;
-var specialCharacters = specialCharacters.value;
+var numberOfCharacters = prompt("How many characters should it be?");
+var numbers = confirm("Do you want to use numbers?");
+var upperAndLowercase = confirm("Do you want to use both upper and lower case letters?");
+var specialCharacters = confirm("Do you want to use special characters?");
 var lowercase = createArray (60, 90);
 var uppercase = createArray (97, 122);
 var number = createArray (48, 57);
-var special = createArray (33, 47).concat(createArray(58, 64)).concant(createArray(91,96)).concat(createArray(123,126));
+// var special = createArray (33, 47).concat(createArray(58, 64)).concant(createArray(91,96)).concat(createArray(123,126));
 
 // Write password to the #password input
+function createArray (low, high) {
+  var array = []
+  for (let i=low; i <=high; i++) {
+    array.push(i);
+  }
+  return array
+}
+
 function generatePassword(numberOfCharacters, numbers, upperAndLowercase, specialCharacters) {
   
   var password = lowercase;
@@ -26,20 +34,14 @@ function generatePassword(numberOfCharacters, numbers, upperAndLowercase, specia
   return password.join('');
 
 }
-function createArray (low, high) {
-  var array = []
-  for (let i=low; i <=high; i++) {
-    array.push(i);
-  }
-  return array
-}
-// Add event listener to generate button
-generateBtn.addEventListener("click", prompts);
 
-function prompts(){
-  numberOfCharacters.value = window.prompt("How many characters should it be?");
-  numbers.value = window.confirm("Do you want to use numbers?");
-  upperAndLowercase.value = window.confirm("Do you want to use both upper and lower case letters?");
-  specialCharacters.value = window.confirm("Do you want to use special characters?");
-  console.log(writePassword);
-}
+// Add event listener to generate button
+generateBtn.addEventListener("click", function(){
+  console.log(password);
+})
+
+
+// var numberOfCharacters = numberOfCharacters.value;
+// var numbers = numbers.value;
+// var upperAndLowercase = upperAndLowercase.value;
+// var specialCharacters = specialCharacters.value;
